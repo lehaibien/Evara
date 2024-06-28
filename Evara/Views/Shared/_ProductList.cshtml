@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Product>
+<div class="row product-grid-3">
+    @foreach (var product in Model)
+    {
+        <div class="col-lg-3 col-md-4">
+            <div class="product-cart-wrap mb-30">
+                <div class="product-img-action-wrap">
+                    <div class="product-img product-img-zoom">
+                        <a asp-action="Detail" asp-route-id="@product.ProductID">
+                            <img class="default-img" src="@product.ImagePath" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="product-content-wrap">
+                    <div class="product-category">
+                        <a asp-action="Detail" asp-route-id="@product.ProductID">@product.Category.Name</a>
+                    </div>
+                    <h2><a asp-action="Detail" asp-route-id="@product.ProductID">@product.Name</a></h2>
+                    <div class="product-price">
+                        <span>@product.Price$</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

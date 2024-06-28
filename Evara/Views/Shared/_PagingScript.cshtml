@@ -1,0 +1,17 @@
+﻿@section Scripts{
+    <script>
+        //change page with ajax
+        const Page = {
+            Paging: (page) => {
+                $.ajax({
+                    data: { page: page },
+                    dataType: "html",
+                    url: "/Shop/Index",
+                    success: (data) => {
+                        $(".product-grid-3").empty();
+                        $(".product-grid-3").append(data);
+                    }
+                });
+            }
+    </script>
+}

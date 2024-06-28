@@ -1,0 +1,13 @@
+﻿@model Brand
+<div class="container">
+    <form method="post" asp-action="Upsert" class="p-3">
+        <input asp-for="BrandID" type="hidden" value="@Model.BrandID" />
+        <div class="form-group">
+            <label asp-for="Name">Brand Name</label>
+            <input asp-for="Name" type="text" class="form-control"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">@(Model.BrandID == 0 ? "Tạo mới" : "Lưu")</button>
+        <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>
